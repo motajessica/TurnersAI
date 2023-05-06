@@ -18,11 +18,13 @@ function UploadImage() {
   }
 
   return (
-    <>
+    <div className='container'>
       <input type="file" multiple accept="image/*" onChange={onImageChange} />
       { imageURLs.map(imageSrc => <img src={imageSrc} />) }
+    </div>
+     
     
-    </>
+
   );
 }
 

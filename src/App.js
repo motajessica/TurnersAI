@@ -4,6 +4,7 @@ import Cards from "./components/Card.js";
 import Search from "./components/Search.js";
 import Hero from "./components/Hero.js";
 import UploadImage from "./components/UploadImage.js";
+import Chatbot from "./components/Chatbot.js"
 
 import "./App.css";
 import React from "react";
@@ -11,20 +12,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
-    <div className="text-center">
-      <div>
-        <Header />
-      </div>
-
-      <div className="hero-background">
-        <Hero />
-      </div>
-
-      <div className="container">
+    <div>
+      <Header />
+      <Hero />  
+      <div className="">
         <Search />
+        <UploadImage />
       </div>
-
-      <UploadImage />
 
       <div className="container">
         <div className="d-flex flex-wrap justify-content-center">
@@ -46,20 +40,8 @@ const App = () => {
           })}
         </div>
       </div>
-      <div
-        className="d-flex justify-content-end"
-        style={{ position: "fixed", bottom: 0, right: 1 }}
-      >
-        <df-messenger
-          chat-icon=""
-          chat-title="Senna"
-          agent-id="dbc245c4-ce7e-412f-92dd-dc48156f0e22"
-          language-code="en"
-        ></df-messenger>
-      </div>
-      <div className="footer">
+        <Chatbot />
         <Footer />
-      </div>
     </div>
   );
 };

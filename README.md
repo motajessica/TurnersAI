@@ -1,14 +1,11 @@
 <!-- ABOUT THE PROJECT -->
 # About The Project
 
-### Mission 1 - Mission Ready HQ Tech accelerator. 
+### Mission 2 - Mission Ready HQ Tech accelerator. 
 
 In the Tech Career Accelerator by Mission Ready HQ, We will be given Missions regularly (mostly weekly) to guide us through gaining the necessary skills to work in the tech industry. Completing these Missions are mandatory because this is one of the keyways to gain new skills. Mission 0 is designed to support you to gain basic technical skills that will help you to navigate through the Tech Career Accelerator. 
 
 In this mission, there are a few tasks to complete: 
-
-
-
 
 
 <p align="right">(<ahref="#readme-top">back to top</a>)</p>
@@ -29,8 +26,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 ### Tasks: 
-  * Build a chatbot using DialogFlow
-  * Integrate Chatbot to Front End
+  * 
+  * 
   
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
