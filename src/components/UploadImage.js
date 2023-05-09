@@ -1,30 +1,57 @@
-import react from 'react';
+import React from 'react';
 import { useState, useEffect } from 'react';
 
 
+const predictionKey = "APIKEY";
+const predictionEndpoint = "Prediction endpoint";
+
 function UploadImage() {
-  const [images, setImages] = useState([]);
-  const [imageURLs, setImageURLs] = useState([]);
 
-  useEffect(() => {
-    if (images.length < 1) return;
-    const newImageURLs = [];
-    images.forEach(image => newImageURLs.push(URL.createObjectURL(image)));
-    setImageURLs(newImageURLs);
-  }, [images]);
-
-  function onImageChange(e) {
-    setImages([...e.target.files]);
+  const [imageFile, setImageFile] = useState(null);
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setImageFile(selectedFile);
   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!imageFile) {
+      return;
+    }
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    const response = await fetch(
+      predictionEndpoint, 
+      {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Prediction-Key': predictionKey
+        }
+      }
+    );
+    const json = await response.json();
+    console.log(json);
+  }
+      // .then(response => {
+      //   console.log("ok")
+        
+      // })
+      // .catch(error => {
+      //   console.log("error")
+    
+      // });
+  // }
 
   return (
     <div className='container'>
-      <input type="file" multiple accept="image/*" onChange={onImageChange} />
-      { imageURLs.map(imageSrc => <img src={imageSrc} />) }
+    <form onSubmit={handleSubmit}>
+     <label>
+        Upload Image:
+        <input type="file" onChange={handleFileChange} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
     </div>
-     
-    
-
   );
 }
 
