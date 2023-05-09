@@ -1,11 +1,16 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { PREDICTION_KEY, IMAGE_PREDICTION_ENDPOINT } from '../config.js';
 
+function getProbability(json) {
+  const predictions = json.predictions
+  const maxProbability = Math.max(...predictions.map(prediction => prediction.probability))
+  const prediction = predictions.find(prediction => prediction.probability === maxProbability) 
 
-const predictionKey = "APIKEY";
-const predictionEndpoint = "Prediction endpoint";
+  return prediction.tagName
+}
 
-function UploadImage() {
+function UploadImage(props) {
 
   const [imageFile, setImageFile] = useState(null);
   const handleFileChange = (event) => {
@@ -20,26 +25,33 @@ function UploadImage() {
     const formData = new FormData();
     formData.append('image', imageFile);
     const response = await fetch(
-      predictionEndpoint, 
+      IMAGE_PREDICTION_ENDPOINT, 
       {
         method: 'POST',
         body: formData,
         headers: {
-          'Prediction-Key': predictionKey
+          'Prediction-Key': PREDICTION_KEY
         }
       }
     );
     const json = await response.json();
+    if(response.ok) {
+      props.onCategoryChange(getProbability(json))
+    } else {
+      props.onInvalidImage("Your image didn't return any results. Try another one.")
+    }
     console.log(json);
-  }
-      // .then(response => {
-      //   console.log("ok")
-        
-      // })
-      // .catch(error => {
-      //   console.log("error")
+    }
+
+
+  //  .then(response => {
+  //       console.log("ok")
+
+  //     })
+  //     .catch(error => {
+  //       console.log("error")
     
-      // });
+  //     });
   // }
 
   return (
