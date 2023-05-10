@@ -3,9 +3,20 @@
 
 ### Mission 2 - Mission Ready HQ Tech accelerator. 
 
-In the Tech Career Accelerator by Mission Ready HQ, We will be given Missions regularly (mostly weekly) to guide us through gaining the necessary skills to work in the tech industry. Completing these Missions are mandatory because this is one of the keyways to gain new skills. Mission 0 is designed to support you to gain basic technical skills that will help you to navigate through the Tech Career Accelerator. 
+In the Tech Career Accelerator by Mission Ready HQ, We will be given Missions regularly (mostly weekly) to guide us through gaining the necessary skills to work in the tech industry. Completing these Missions are mandatory because this is one of the keyways to gain new skills. Mission 2 is designed to support you to gain basic technical skills that will help you to navigate through the Tech Career Accelerator. 
 
 In this mission, there are a few tasks to complete: 
+
+* Prototype to Showcase AI Solution
+  *  Build an application to find Similar Cars
+  * Showcase NLP
+  * Showcase AI Search
+
+* Ideate with UX Designers
+* Present at Show and Tell
+
+
+
 
 
 <p align="right">(<ahref="#readme-top">back to top</a>)</p>
@@ -13,22 +24,20 @@ In this mission, there are a few tasks to complete:
 
 ### Built With
 
+* React
+* Bootstrap 5 
+* Javascript 
+
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 
-* React
-* Bootstrap 5 
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 # Getting Started with The Mission 1 Project
 
-
-### Tasks: 
-  * 
-  * 
-  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -100,3 +109,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### ADV Team Members
+* Jessica 
+* Rainbow 
+* Ricardo
