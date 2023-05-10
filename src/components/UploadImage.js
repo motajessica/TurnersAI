@@ -47,13 +47,13 @@ function UploadImage(props) {
     }
 
   return (
-    <div className='container'>
-    <form onSubmit={handleSubmit}>
-     <label>
-        Upload Image:
-        <input type="file" onChange={handleFileChange} />
-      </label>
-      <button type="submit">Submit</button>
+    <div className='container d-flex justify-content-center'>
+    <form className="fw-bold" onSubmit={handleSubmit}>
+      <div className="mb-3">
+        <label htmlFor="imageUpload" className="form-label text-dark">Upload Image</label>
+        <input type="file" className="form-control" id="imageUpload" onChange={handleFileChange} />
+      </div>
+      <button type="submit" className="btn btn-outline-primary">Submit</button>
     </form>
     </div>
   );
