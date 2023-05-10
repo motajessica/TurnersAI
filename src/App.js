@@ -15,13 +15,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   const [cars, setCars] = useState(carDb);
   const [error, setError] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
   const handleCategoryChange = function(category) {
-    const filteredCars = carDb.filter(car => car.category === category)
-    setCars(filteredCars)
+    const filteredCars = carDb.filter(car => car.category === category);
+    setCars(filteredCars);
+    setSelectedCategory(category);
+    setShowMessage(true);
+    
+
   }
   function handleInvalidImage(message) {
     setCars([]);
     setError(message); 
+    setShowMessage(false);
   }
   return (
     <div>
@@ -30,8 +37,12 @@ const App = () => {
       <div className="">
         <Search />
           <UploadImage onCategoryChange={handleCategoryChange} onInvalidImage={handleInvalidImage}/>
+          <div className="container mt-5 text-center">
+           {showMessage && <h1>{selectedCategory} cars</h1>}
+          </div>
       </div>
       <div className="container">
+      
         <div className="d-flex py-4 flex-wrap justify-content-center">
           {cars.map(function (car) {
             return <Card car={car} />;
