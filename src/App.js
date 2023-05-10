@@ -22,9 +22,8 @@ const App = () => {
     setCars(filteredCars);
     setSelectedCategory(category);
     setShowMessage(true);
-    
-
   }
+  
   function handleInvalidImage(message) {
     setCars([]);
     setError(message); 

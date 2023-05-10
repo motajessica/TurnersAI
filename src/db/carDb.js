@@ -28,5 +28,11 @@ export const carDb = [
   {model: "SEDAN", category: "sedan", make: "Volvo", year: "2020",  price:"23300",image: "sedan-4"},
   {model: "VAN", category: "van", make: "Honda", year: "2019", price:"35400", image: "van-4"},
   {model: "CONVERTIBLE", category: "convertible", make: "Lamborghini", year: "2018", price:"31500", image: "convertible-4"},
-  {model: "UTILITY", category: "utility", make:"Kia", year:"2020", price:"19000", image: "utility-4"}
+  {model: "UTILITY", category: "utility", make:"Kia", year:"2020", price:"19000", image: "utility-4"},
+  {model: "CX-5", category: "suv", make: "Mazda", year: "2019", price: "23000", image: "suv"},
+  {model: "Civic", category: "hatchback", make: "Honda", year: "2020", price: "24000", image: "hatchback"},
+  {model: "Camry", category: "sedan", make: "Toyota", year: "2019", price: "25000", image: "sedan"},
+  {model: "Sienna", category: "van", make: "Toyota", year: "2020", price: "28000", image: "van"},
+  {model: "Miata", category: "convertible", make: "Mazda", year: "2017", price: "23000", image: "convertible"},
+  {model: "F-150", category: "utility", make: "Ford", year: "2020", price: "40000", image: "utility"},
   ]
