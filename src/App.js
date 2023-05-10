@@ -32,11 +32,15 @@ const App = () => {
           <UploadImage onCategoryChange={handleCategoryChange} onInvalidImage={handleInvalidImage}/>
       </div>
       <div className="container">
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex py-4 flex-wrap justify-content-center">
           {cars.map(function (car) {
             return <Card car={car} />;
           })}
-          {error && <h2>{error}</h2>}
+          {
+            error 
+              && 
+            <h3 className="alert alert-danger container" role="alert">{error}</h3>
+          }
         </div>
       </div>
         <Chatbot />
