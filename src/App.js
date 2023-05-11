@@ -1,7 +1,6 @@
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import Card from "./components/Card.js";
-import Search from "./components/Search.js";
 import Hero from "./components/Hero.js";
 import UploadImage from "./components/UploadImage.js";
 import Chatbot from "./components/Chatbot.js";
@@ -49,25 +48,23 @@ const App = () => {
       </div>
       <div className="container">
       
-        <div >
+     
           <div className="d-flex py-4 flex-wrap justify-content-center">
             { 
               isSearching 
               ?
-              "Now I'm searching" 
+              <p>Now I am serarching your car category</p>
               :
               cars.map(function (car) {
                 return <Card car={car} />;
               })
             }
-          </div>
-          <div>
             {
               error 
                 && 
               <p className="alert alert-danger container" role="alert">{error}</p>
             } 
-          </div>
+        
         </div>
       </div>
         <Chatbot />
