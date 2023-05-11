@@ -23,7 +23,7 @@ const App = () => {
     setSelectedCategory(category);
     setShowMessage(true);
   }
-  
+
   function handleInvalidImage(message) {
     setCars([]);
     setError(message); 
@@ -34,7 +34,7 @@ const App = () => {
       <Header />
       <Hero />  
       <div className="">
-        <Search />
+        
           <UploadImage onCategoryChange={handleCategoryChange} onInvalidImage={handleInvalidImage}/>
           <div className="container mt-5 text-center">
            {showMessage && <h1>{selectedCategory} cars</h1>}

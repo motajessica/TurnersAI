@@ -6,7 +6,7 @@ import {Form, Button } from 'react-bootstrap'
 function Search () {
   return (
     <div className='d-flex my-4 justify-content-center'>
-        <Dropdown>
+        {/* <Dropdown>
           <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
             Filter car by category
           </Dropdown.Toggle>
@@ -20,16 +20,16 @@ function Search () {
             <Dropdown.Item href="#/action-3">Van</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Wagon</Dropdown.Item>
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown> */}
 
-        <Form className="ms-5 d-flex " >
+        <Form className="d-flex " >
             <Form.Control
               type="search"
               placeholder="Find a Car"
               className="me-2"
               aria-label="Search"
             />
-              <Button variant="outline-dark btn-sm">Search</Button>
+              <Button variant="outline-light btn-sm">Search</Button>
         </Form>
         
     </div>

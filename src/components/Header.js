@@ -16,7 +16,7 @@ function Header() {
         <Nav className="ms-auto ms-auto mb-2 mb-lg-0">
      
             {/* <Nav.Link href="/contact">CONTACT US</Nav.Link> */}
-            <NavDropdown title="How to buy" id="basic-nav-dropdown">
+            <NavDropdown className="me-5" title="How to buy" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">How to buy</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -27,7 +27,7 @@ function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Sell your car" id="basic-nav-dropdown">
+            <NavDropdown className="me-5" title="Sell your car" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -38,7 +38,7 @@ function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Finance & Insurance" id="basic-nav-dropdown">
+            <NavDropdown className="me-5" title="Finance & Insurance" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -49,7 +49,7 @@ function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Turners subscription" id="basic-nav-dropdown">
+            <NavDropdown className="me-5" title="Turners subscription" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -61,7 +61,8 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
           
-          <Nav.Link className="fw-bold btn btn-outline-primary btn-sm " href="/login">Login</Nav.Link>
+          <Nav.Link className="fw-bold btn btn-outline-primary btn-sm me-1" href="/login">Login</Nav.Link>
+          <Nav.Link className="fw-bold btn btn-primary btn-sm text-white " href="/login">Register</Nav.Link>
         </Nav>
 
       </Navbar.Collapse>
