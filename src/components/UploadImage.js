@@ -26,6 +26,7 @@ function UploadImage(props) {
     }
     const formData = new FormData();
     formData.append('image', imageFile);
+    props.setIsSearching(true)
     const response = await fetch(
       IMAGE_PREDICTION_ENDPOINT, 
       {
@@ -37,6 +38,7 @@ function UploadImage(props) {
       }
     );
     const json = await response.json();
+    props.setIsSearching(false)
     const prediction = getProbability(json);
     if (prediction !== null) {
       props.onCategoryChange(prediction);
@@ -53,7 +55,7 @@ function UploadImage(props) {
         <label htmlFor="imageUpload" className="form-label text-dark">Filter cars by uploading an Image</label>
         <input type="file" className="form-control" id="imageUpload" onChange={handleFileChange} />
       </div>
-      <button type="submit" className="btn btn-outline-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">Submit</button>
     </form>
     </div>
   );

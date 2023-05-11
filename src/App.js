@@ -14,17 +14,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const [cars, setCars] = useState(carDb);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const handleCategoryChange = function(category) {
     const filteredCars = carDb.filter(car => car.category === category);
+    setError(null)
     setCars(filteredCars);
     setSelectedCategory(category);
     setShowMessage(true);
   }
 
+  const handleSearching = function(isSearching) {
+    setError(null)
+    setIsSearching(isSearching)
+  }
+
   function handleInvalidImage(message) {
+    console.log("ERROR")
     setCars([]);
     setError(message); 
     setShowMessage(false);
@@ -34,23 +42,32 @@ const App = () => {
       <Header />
       <Hero />  
       <div className="">
-        
-          <UploadImage onCategoryChange={handleCategoryChange} onInvalidImage={handleInvalidImage}/>
+          <UploadImage onCategoryChange={handleCategoryChange} onInvalidImage={handleInvalidImage} setIsSearching={handleSearching} />
           <div className="container mt-5 text-center">
-           {showMessage && <h1>{selectedCategory} cars</h1>}
+           {showMessage && <h2>{selectedCategory} cars</h2>}
           </div>
       </div>
       <div className="container">
       
-        <div className="d-flex py-4 flex-wrap justify-content-center">
-          {cars.map(function (car) {
-            return <Card car={car} />;
-          })}
-          {
-            error 
-              && 
-            <h3 className="alert alert-danger container" role="alert">{error}</h3>
-          }
+        <div >
+          <div className="d-flex py-4 flex-wrap justify-content-center">
+            { 
+              isSearching 
+              ?
+              "Now I'm searching" 
+              :
+              cars.map(function (car) {
+                return <Card car={car} />;
+              })
+            }
+          </div>
+          <div>
+            {
+              error 
+                && 
+              <p className="alert alert-danger container" role="alert">{error}</p>
+            } 
+          </div>
         </div>
       </div>
         <Chatbot />

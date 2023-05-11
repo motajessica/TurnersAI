@@ -47,7 +47,7 @@ function Hero() {
             <FontAwesomeIcon icon={faApple} className="" /> Download
           </button>  
          <div className="hero--search">
-         <Search />
+          <Search />
          </div>
                  
         </div>
