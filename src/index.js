@@ -8,16 +8,8 @@ import App from './App';
 // const PredictionApi = require("@azure/cognitiveservices-customvision-prediction");
 // const msRest = require("@azure/ms-rest-js");
 
-
-
-
-
-//
-
 // const publishIterationName = "classifyModel";
 // const setTimeoutPromise = util.promisify(setTimeout);
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
